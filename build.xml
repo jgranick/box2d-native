@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<buildhx>
+	
+	<library name="box2d" type="cpp" />
+	
+	<output path="" />
+	
+	<!-- <type name="B2AABB" remap="" />
+	<type name="B2Body" remap="box2d.dynamics.B2Body" />
+	<type name="B2BodyDef" remap="" />
+	<type name="B2Contact" remap="box2d.dynamics.contacts.B2Contact" />
+	<type name="B2ContactFilter" remap="" />
+	<type name="B2ContactListener" remap="" />
+	<type name="B2ContactManager" remap="box2d.dynamics.B2ContactManager" />
+	<type name="B2DestructionListener" remap="" />
+	<type name="B2Draw" remap="" />
+	<type name="B2Joint" remap="" />
+	<type name="B2JointDef" remap="" />
+	<type name="B2Profile" remap="" />
+	<type name="B2QueryCallback" remap="" />
+	<type name="B2RayCastCallback" remap="" /> -->
+	<type name="B2Vec2" remap="box2d.common.math.B2Vec2" />
+	<type name="B2World" remap="box2d.dynamics.B2World" />
+	
+	<class name="box2d.common.math.B2Vec2" native="b2Vec2" header="Box2D/Common/b2Math.h">
+		
+		<property name="x" type="Float" />
+		<property name="y" type="Float" />
+		
+		<constructor params="x:Float, y:Float" />
+		
+		<method name="isValid" native="IsValid" return="Bool" />
+		<method name="length" native="Length" return="Float" />
+		<method name="lengthSquared" native="LengthSquared" return="Float" />
+		<method name="normalize" native="Normalize" return="Float" />
+		<method name="setZero" native="SetZero" />
+		<method name="set" native="Set" params="x:Float, y:Float" />
+		<!-- <method name="skew" native="Skew" return="B2Vec2" /> -->
+		
+	</class>
+	
+	<class name="box2d.dynamics.B2World" native="b2World" header="Box2D/Dynamics/b2World.h">
+		
+		<property name="allowSleeping" getter="GetAllowSleeping" setter="SetAllowSleeping" type="Bool" />
+		<property name="autoClearForces" getter="GetAutoClearForces" setter="SetAutoClearForces" type="Bool" />
+		<property name="bodyCount" getter="GetBodyCount" type="Int" />
+		<!-- <property name="bodyList" getter="GetBodyList" type="Array <B2Body>" /> -->
+		<property name="contactCount" getter="GetContactCount" type="Int" />
+		<!-- <property name="contactList" getter="GetContactList" type="Array <B2Contact>" />
+		<property name="contactManager" getter="GetContactManager" type="B2ContactManager" /> -->
+		<property name="continuousPhysics" getter="GetContinuousPhysics" setter="SetContinuousPhysics" type="Bool" />
+		<!-- <property name="gravity" getter="GetGravity" setter="SetGravity" type="B2Vec2" /> -->
+		<property name="isLocked" getter="IsLocked" type="Bool" />
+		<property name="jointCount" getter="GetJointCount" type="Int" />
+		<!-- <property name="jointList" getter="GetJointList" type="Array <B2Joint>" />
+		<property name="profile" getter="GetProfile" type="B2Profile" /> -->
+		<property name="proxyCount" getter="GetProxyCount" type="Int" />
+		<property name="subStepping" getter="GetSubStepping" setter="SetSubStepping" type="Bool" />
+		<property name="treeBalance" getter="GetTreeBalance" type="Int" />
+		<property name="treeHeight" getter="GetTreeHeight" type="Int" />
+		<property name="treeQuality" getter="GetTreeQuality" type="Float" />
+		<property name="warmStarting" getter="GetWarmStarting" setter="SetWarmStarting" type="Bool" />
+		
+		<constructor params="gravity:B2Vec2" />
+		
+		<method name="clearForces" native="ClearForces" />
+		<!-- <method name="CreateBody" params="def:B2BodyDef" return="B2Body" />
+		<method name="CreateJoint" params="def:B2JointDef" return="B2Joint" />
+		<method name="DestroyBody" params="body:B2Body" />
+		<method name="DestroyJoint" params="joint:B2Joint" /> -->
+		<method name="drawDebugData" native="DrawDebugData" />
+		<method name="dump" native="Dump" />
+		<!-- <method name="QueryAABB" params="queryCallback:B2QueryCallback, aabb:B2AABB" />
+		<method name="RayCast" params="rayCastCallback:B2RayCastCallback, point1:B2Vec2, point2:B2Vec2" />
+		<method name="SetContactFilter" params="filter:B2ContactFilter" />
+		<method name="SetContactListener" params="listener:B2ContactListener" />
+		<method name="SetDebugDraw" params="debugDraw:B2Draw" />
+		<method name="SetDestructionListener" params="listener:B2DestructionListener" />
+		<method name="Step" params="timeStep:Float, velocityIterations:Int, positionIterations:Int" /> -->
+		
+	</class>
+	
+</buildhx>
